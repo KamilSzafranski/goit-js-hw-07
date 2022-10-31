@@ -15,14 +15,13 @@ const createGallery = (element) => {
 };
 
 const modal = (event) => {
-  event.preventDefault();
-
   const closeModal = (event) => {
     if (event.code === "Escape") {
       return basicLightboxElement.close();
     }
     return;
   };
+
   const basicLightboxElement = basicLightbox.create(
     `<img width="1400" height="900" src="${event.target.dataset.source}">`,
     {
@@ -30,6 +29,7 @@ const modal = (event) => {
     }
   );
 
+  event.preventDefault();
   basicLightboxElement.show();
 };
 
