@@ -17,9 +17,9 @@ const createGallery = (element) => {
 const modal = (event) => {
   const closeModal = (event) => {
     if (event.code === "Escape") {
-      return basicLightboxElement.close();
+      basicLightboxElement.close();
+      document.removeEventListener("keydown", closeModal);
     }
-    return;
   };
 
   const basicLightboxElement = basicLightbox.create(
