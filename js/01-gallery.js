@@ -18,7 +18,7 @@ const modal = (event) => {
   const closeModal = (event) => {
     if (event.code === "Escape") {
       basicLightboxElement.close();
-      document.removeEventListener("keydown", closeModal);
+      console.log("elo");
     }
   };
 
@@ -26,6 +26,7 @@ const modal = (event) => {
     `<img width="1400" height="900" src="${event.target.dataset.source}">`,
     {
       onShow: () => document.addEventListener("keydown", closeModal),
+      onClose: () => document.removeEventListener("keydown", closeModal),
     }
   );
 
