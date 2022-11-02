@@ -18,7 +18,6 @@ const modal = (event) => {
   const closeModal = (event) => {
     if (event.code === "Escape") {
       basicLightboxElement.close();
-      console.log("elo");
     }
   };
 
